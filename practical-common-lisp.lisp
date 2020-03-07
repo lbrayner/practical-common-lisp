@@ -18,6 +18,7 @@
 ;;       collect n))
 
 ;; loop sucks
+;; functional programming is lit
 (defun range (max &key (min 1) (step 1))
   (if (not (> min max))
       (append (list min) (range max :min (+ min step) :step step))
@@ -27,7 +28,8 @@
 (range 4)
 (function range)
 
-(princ ".") (princ ".") (princ ".")
+(progn
+  (princ ".") (princ ".") (princ "."))
 
 (when (> 5 4) (format t "Yes."))
 
@@ -40,3 +42,6 @@
 (dots 2)
 
 (function dots)
+
+(find-package :com.gigamonkeys.pathnames)
+(package-nicknames :com.gigamonkeys.pathnames)
